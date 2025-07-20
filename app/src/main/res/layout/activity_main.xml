@@ -8,13 +8,18 @@
     tools:context=".Activity.SplashActivity">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:paddingBottom="80dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,16 +66,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="16dp"
-                android:ems="10"
                 android:background="@drawable/grey_full_corner"
-                android:inputType="text"
-                android:hint="@string/what_are_you_looking_for"
-                android:textSize="14sp"
+                android:drawableStart="@drawable/search_icon"
                 android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="@string/what_are_you_looking_for"
+                android:inputType="text"
                 android:padding="12sp"
                 android:textColorHint="@color/grey"
-                android:drawableStart="@drawable/search_icon"
-                />
+                android:textSize="14sp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -87,7 +91,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView"
+                    android:id="@+id/recyclerViewBrands"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
@@ -100,7 +104,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp">
+                android:layout_height="180dp"
+                android:layout_marginTop="16dp">
 
                 <ProgressBar
                     android:id="@+id/progressBarBanner"
@@ -112,22 +117,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/viewpageslider" />
 
-                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    app:dotsColor="@color/LightGrey"
-                    app:dotsCornerRadius="8dp"
-                    app:dotsSize="6dp"
-                    app:dotsSpacing="2dp"
-                    app:dotsWidthFactor="2.5"
-                    android:id="@+id/dotIndicator"
-                    app:selectedDotColor="@color/blue"
-                    app:layout_constraintBottom_toBottomOf="@+id/viewpageslider"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:visibility="visible" />
-
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewpageslider"
                     android:layout_width="match_parent"
@@ -137,13 +126,29 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/dotIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:dotsColor="@color/LightGrey"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSize="6dp"
+                    app:dotsSpacing="2dp"
+                    app:dotsWidthFactor="2.5"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewpageslider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:selectedDotColor="@color/blue"
+                    tools:visibility="visible" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="16dp"
                 android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -154,8 +159,7 @@
                     android:text="Recommendation"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView11"
@@ -163,7 +167,7 @@
                     android:layout_height="wrap_content"
 
                     android:text="See all"
-                    android:textColor="@color/blue"/>
+                    android:textColor="@color/blue" />
 
             </LinearLayout>
 
@@ -194,21 +198,26 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_marginBottom="24dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="bottom"
+            android:layout_width="338dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
             android:background="@drawable/blue_bg">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/imageView6"
@@ -216,18 +225,16 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:padding="18dp"
+                    android:padding="12dp"
                     app:srcCompat="@drawable/btn_1" />
 
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_gravity="center"
+                    android:layout_gravity="center|start"
                     android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:padding="18dp"
+                    android:padding="12dp"
                     app:srcCompat="@drawable/btn_2" />
 
                 <ImageView
@@ -236,8 +243,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:padding="18dp"
+                    android:padding="12dp"
                     app:srcCompat="@drawable/btn_3" />
 
                 <ImageView
@@ -246,7 +252,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
-                    android:padding="18dp"
+                    android:padding="12dp"
                     app:srcCompat="@drawable/btn_5" />
             </LinearLayout>
 
